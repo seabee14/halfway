@@ -1,0 +1,78 @@
+<table class="ui table">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Temperature</th>
+      <th>Wind Speed</th>
+      <th>Pressure</th>
+    </tr>
+    
+    <div class="ui five inverted stackable cards">
+
+        <div class="card">
+            <div class="image"></div>
+            <div class="extra">
+                <h2 class="ui center aligned icon">
+                <i class="marker icon"></i>
+                <h3>{{station.title}}</h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image"></div>
+            <div class="extra">
+                <h2 class="ui center aligned icon">
+                <i class="cloud icon"></i>
+                <h3>Weather: </h3>
+                <h5><p></p></h5>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image"></div>
+            <div class="extra">
+                <h2 class="ui center aligned icon">
+                    <i class="temperature low icon"></i>
+                <h3>Temperature: </h3>
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="image"></div>
+            <div class="extra">
+                <h2 class="ui center aligned icon">
+                    <i class="wind icon"></i>
+                <h3> Wind: </h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image"></div>
+            <div class="extra">
+                <h2 class="ui center aligned icon">
+                <i class="atom icon"></i>
+                <h3> Pressure: </h3>
+            </div>
+        </div>
+    </div>
+  </thead>
+  <tbody>
+    {{#each station.readings}}
+      <tr>
+        <td>
+          {{code}}
+        </td>
+        <td>
+          {{temperature}}
+        </td>
+        <td>
+        {{windSpeed}}
+        </td>
+        <td>
+        {{pressure}}
+        </td>
+        <td>
+          <a href="/station/{{../station.id}}/deletereading/{{id}}" class="ui icon button">
+          <i class="icon trash"></i></a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
