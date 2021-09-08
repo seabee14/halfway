@@ -28,6 +28,10 @@ const stationStore = {
     _.remove(this.stationCollection, { id: id });
   },
   
+    addStation(station) {
+    this.stationCollection.push(station);
+  },
+  
 };
 
 module.exports = stationStore;
